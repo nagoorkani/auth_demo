@@ -12,7 +12,7 @@ class _MyRegisterState extends State<MyRegister> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage('assets/images/kk-register-664x325.png'),
             fit: BoxFit.cover),
@@ -26,10 +26,11 @@ class _MyRegisterState extends State<MyRegister> {
         body: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 35, top: 30),
+              padding: const EdgeInsets.only(left: 35, top: 100),
               child: Text(
-                'Create\nAccount',
-                style: TextStyle(color: Colors.white, fontSize: 33),
+                'New User',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 183, 93, 3), fontSize: 33),
               ),
             ),
             SingleChildScrollView(
@@ -40,50 +41,50 @@ class _MyRegisterState extends State<MyRegister> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 35, right: 35),
+                      margin: const EdgeInsets.only(left: 35, right: 35),
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            // style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
+                                  borderSide: const BorderSide(
+                                    color: Color.fromARGB(255, 177, 172, 172),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.black,
                                   ),
                                 ),
                                 hintText: "Name",
-                                hintStyle: TextStyle(color: Colors.white),
+                                hintStyle: TextStyle(color: Colors.grey[400]),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            // style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
+                                  borderSide: const BorderSide(
+                                    color: Color.fromARGB(255, 177, 172, 172),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.black,
                                   ),
                                 ),
                                 hintText: "Email",
-                                hintStyle: TextStyle(color: Colors.white),
+                                hintStyle: TextStyle(color: Colors.grey[400]),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -92,13 +93,13 @@ class _MyRegisterState extends State<MyRegister> {
                             height: 30,
                           ),
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            // style: TextStyle(color: Colors.white),
                             obscureText: true,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
+                                  borderSide: const BorderSide(
+                                    color: Color.fromARGB(255, 177, 172, 172),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
@@ -108,7 +109,7 @@ class _MyRegisterState extends State<MyRegister> {
                                   ),
                                 ),
                                 hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.white),
+                                hintStyle: TextStyle(color: Colors.grey[400]),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -122,7 +123,7 @@ class _MyRegisterState extends State<MyRegister> {
                               Text(
                                 'Sign Up',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color(0xff4c505b),
                                     fontSize: 27,
                                     fontWeight: FontWeight.w700),
                               ),
@@ -156,7 +157,7 @@ class _MyRegisterState extends State<MyRegister> {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Colors.white,
+                                      color: Color(0xff4c505b),
                                       fontSize: 18),
                                 ),
                                 style: ButtonStyle(),

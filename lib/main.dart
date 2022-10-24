@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auth_demo/widgets/TextBox.dart';
+import 'package:auth_demo/screens/login.dart';
+import 'package:auth_demo/screens/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyLogin(),
+      routes: {
+        'register': (context) => const MyRegister(),
+        'login': (context) => const MyLogin(),
+      },
     );
   }
 }

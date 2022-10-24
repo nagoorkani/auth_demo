@@ -9,6 +9,8 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+  bool _isShopOwner = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,14 +23,14 @@ class _MyLoginState extends State<MyLogin> {
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
-            Container(),
-            Container(
-              padding: EdgeInsets.only(left: 35, top: 130),
-              child: Text(
-                'Welcome\nBack',
-                style: TextStyle(color: Colors.white, fontSize: 33),
-              ),
-            ),
+            // Container(),
+            // Container(
+            //   padding: EdgeInsets.only(left: 35, top: 130),
+            //   child: Text(
+            //     'Welcome\nBack',
+            //     style: TextStyle(color: Colors.white, fontSize: 33),
+            //   ),
+            // ),
             SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(
@@ -42,13 +44,23 @@ class _MyLoginState extends State<MyLogin> {
                         children: [
                           TextField(
                             style: TextStyle(color: Colors.black),
+                            keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Email",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                              prefixIcon: Icon(Icons.phone_sharp),
+                              fillColor: Colors.grey.shade100,
+                              filled: true,
+                              hintText: "mobile no",
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              // focusedBorder: const OutlineInputBorder(
+                              //   borderRadius:
+                              //       BorderRadius.all(Radius.circular(10.0)),
+                              //   borderSide: BorderSide(
+                              //       color: Color.fromARGB(255, 209, 108, 0),
+                              //       width: 2),
+                              // ),
+                            ),
                           ),
                           SizedBox(
                             height: 30,
@@ -57,12 +69,46 @@ class _MyLoginState extends State<MyLogin> {
                             style: TextStyle(),
                             obscureText: true,
                             decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Password",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                              prefixIcon: Icon(Icons.person),
+                              fillColor: Colors.grey.shade100,
+                              filled: true,
+                              hintText: "name",
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              // focusedBorder: const OutlineInputBorder(
+                              //     borderRadius:
+                              //         BorderRadius.all(Radius.circular(10.0))),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Column(
+                            children: [
+                              if (_isShopOwner)
+                                TextField(
+                                    style: TextStyle(),
+                                    obscureText: true,
+                                    decoration: InputDecoration(
+                                      prefixIcon: Icon(Icons.numbers),
+                                      fillColor: Colors.grey.shade100,
+                                      filled: true,
+                                      hintText: "GST No",
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                    )),
+                              CheckboxListTile(
+                                title: const Text("Shop owner"),
+                                value: _isShopOwner,
+                                onChanged: (bool? newValue) {
+                                  setState(() {
+                                    _isShopOwner = newValue!;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                           SizedBox(
                             height: 40,
